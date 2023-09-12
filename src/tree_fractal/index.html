@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Tree fractal</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+</head>
+<body>
+  <article>
+    <div class="canvas">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="controls">
+      <label for="maxDepth">Depth</label>
+      <input id="maxDepth" type="range" min="1" max="18"/>
+
+      <label for="angleR">Angle Right</label>
+      <input id="angleR" type="range" min="0" max="1" step="0.05"/>
+
+      <label for="angleL">Angle Left</label>
+      <input id="angleL" type="range" min="0" max="1" step="0.05"/>
+
+      <label for="len">Length</label>
+      <input id="len" type="range" min="0.3" max="0.9" step="0.01"/>
+    </div>
+  </article>
+</body>
+<script src='options.js'></script>
+<script src='index.js'></script>
+</html>
