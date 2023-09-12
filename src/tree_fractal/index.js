@@ -25,12 +25,11 @@ function draw() {
   }
 
   function draw_iterative() {
-    const nodes = [];
-    nodes.push([canvas.width / 2, canvas.height, 0, canvas.height / 5, 0]);
+    const branches = [];
+    branches.push([canvas.width / 2, canvas.height, 0, canvas.height / 5, 0]);
 
-    while (nodes.length) {
-      const [x, y, angle, len, depth] = nodes[nodes.length - 1];
-      nodes.pop();
+    while (branches.length) {
+      const [x, y, angle, len, depth] = branches.pop();
 
       if (depth >= options.maxDepth) {
         continue;
@@ -42,8 +41,8 @@ function draw() {
       ctx.lineTo(newX, newY);
       count++;
 
-      nodes.push([newX, newY, angle + options.angleR, len * options.len, depth+1]);
-      nodes.push([newX, newY, angle - options.angleL, len * options.len, depth+1]);
+      branches.push([newX, newY, angle + options.angleR, len * options.len, depth+1]);
+      branches.push([newX, newY, angle - options.angleL, len * options.len, depth+1]);
     }
   }
 
