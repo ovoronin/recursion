@@ -7,11 +7,11 @@ const tree: Tree<string> = {
       data: 'b',
       children: [
         {
-          data: 'd',
+          data: 'e',
           children: []
         },
         {
-          data: 'e',
+          data: 'f',
           children: []
         },
       ]
@@ -20,12 +20,16 @@ const tree: Tree<string> = {
       data: 'c',
       children: []
     },
+    {
+      data: 'd',
+      children: []
+    },
   ]
 }
 
 describe('Tree', () => {
   it('should traverse', () => {
-    expect(traverse(tree)).toEqual(['a', 'b', 'd', 'e', 'c']);
+    expect(traverse(tree)).toEqual(['a', 'b', 'e', 'f', 'c', 'd']);
   });
 
   it('should get depth', () => {
@@ -38,6 +42,7 @@ describe('Tree', () => {
     expect(contains(tree, 'c')).toBe(true);
     expect(contains(tree, 'd')).toBe(true);
     expect(contains(tree, 'e')).toBe(true);
-    expect(contains(tree, 'f')).toBe(false);
+    expect(contains(tree, 'f')).toBe(true);
+    expect(contains(tree, 'aaa')).toBe(false);
   });
 });
