@@ -1,4 +1,4 @@
-import { fib } from "./fibonacci";
+import { counters, fib, fib_memo } from "./fibonacci";
 
 describe('Fibonacci', () => {
   test('Base cases', () => {
@@ -15,4 +15,14 @@ describe('Fibonacci', () => {
     expect(fib(7)).toBe(21);
     expect(fib(8)).toBe(34);
   });
+
+  test('Memoization', () => {
+    counters.clear();
+    expect(fib(9)).toBe(55);
+    console.log(counters);
+
+    counters.clear();
+    expect(fib_memo(9)).toBe(55);
+    console.log(counters);
+  })
 });
